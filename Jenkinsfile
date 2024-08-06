@@ -3,15 +3,15 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockercred')
-        DOCKER_IMAGE = 'huzaifh02/nodejsapp'
+        DOCKER_IMAGE = 'huzaifh02/demo-cicd'
         SSH_CREDENTIALS = 'nodeapp-cred'
-        EC2_IP = '13.233.74.113'
+        EC2_IP = '13.127.93.139'
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'master', credentialsId: 'gitcred', url: 'https://github.com/huzaifh02/nodejs-mysql-cicd.git'
+                git branch: 'master', credentialsId: 'gitcred', url: 'https://github.com/huzaifh02/demo-cicd.git'
             }
         }
 
